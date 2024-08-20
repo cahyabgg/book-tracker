@@ -1,0 +1,28 @@
+body {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    margin: 0;
+}
+
+.login {
+    width: 300px;
+    padding: 20px;
+    border: 2px solid black;
+    text-align: center;
+    box-sizing: border-box;
+}
+
+h1{
+    padding-bottom: 10px;
+}
+
+
+
+.login_btn{
+    border: 1px solid black !important;
+    margin-right: 64px;
+    cursor: pointer;
+    padding-top: 10px auto;
+}

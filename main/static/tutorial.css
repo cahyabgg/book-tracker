@@ -1,0 +1,15 @@
+
+.opening{ /* untuk select class */
+    padding: 10px;
+    background-color: red;
+}
+
+h1 { /* untuk select jenis */
+    background-color: red ;
+}
+
+#main{ /* untuk select id */
+    padding: 10px 0;
+    background-color: blue;
+    color: whitesmoke;
+}

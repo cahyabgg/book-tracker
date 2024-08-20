@@ -1,10 +1,13 @@
 {% extends 'base.html' %}
+{% load static %}
 
 {% block meta %}
 <title>Login</title>
 {% endblock meta %} 
 
 {% block content %}
+<!-- link ke file css harus di dalam body html atau dalam content -->
+<link rel="stylesheet" type="text/css" href="{% static 'main-login.css' %}" />
 <div class="login">
   <h1>Login</h1>
 
@@ -49,6 +52,7 @@
     {% endfor %}
   </ul>
   {% endif %} Don't have an account yet?
+  <br>
   <a href="{% url 'main:register' %}">Register Now</a>
 </div>
 

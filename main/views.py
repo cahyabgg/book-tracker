@@ -94,4 +94,28 @@ def logout_user(request):
     response.delete_cookie('last_login')
     return response
 
+def show_css(request):
+    return render(request,"tutor.html")
 
+def edit_book(request, id):
+    # Get book berdasarkan ID
+    book = Book.objects.get(pk = id)
+
+    # Set book sebagai instance dari form
+    form = BookForm(request.POST or None, instance=book)
+
+    if form.is_valid() and request.method == "POST":
+        # Simpan form dan kembali ke halaman awal
+        form.save()
+        return HttpResponseRedirect(reverse('main:show_main'))
+
+    context = {'form': form}
+    return render(request, "edit_book.html", context)
+
+def delete_book(request, id):
+    # Get data berdasarkan ID
+    book = Book.objects.get(pk = id)
+    # Hapus data
+    book.delete()
+    # Kembali ke halaman awal
+    return HttpResponseRedirect(reverse('main:show_main'))
